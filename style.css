@@ -1,0 +1,356 @@
+:root {
+    --primary-color: #c5a059; /* Elegant Champagne Gold */
+    --secondary-color: #1a1a1a; /* Sophisticated Charcoal */
+    --bg-color: #fdfcf8; /* Soft Parchment */
+    --card-bg: #ffffff;
+    --text-muted: #6b6b6b;
+    --font-heading: 'Playfair Display', serif;
+    --font-text: 'Montserrat', sans-serif;
+    --border-gold: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-text);
+    background-color: var(--bg-color);
+    /* Soft Elegant Background with subtle floral pattern */
+    background-image: 
+        radial-gradient(circle at 100% 0%, rgba(197, 160, 89, 0.05) 0%, transparent 25%),
+        radial-gradient(circle at 0% 100%, rgba(197, 160, 89, 0.05) 0%, transparent 25%),
+        url("https://www.transparenttextures.com/patterns/cream-paper.png");
+    color: var(--secondary-color);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* Floral Decorations */
+.details-section, .gifts-section, .rsvp-section {
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.details-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    background-image: url('https://www.transparenttextures.com/patterns/floral-paper.png');
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.rsvp-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background-image: url('https://www.transparenttextures.com/patterns/flowered-paper.png');
+    opacity: 0.1;
+    transform: rotate(180deg);
+    pointer-events: none;
+}
+
+/* Section Containers */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.names {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.invite-phrase {
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+/* Countdown Styles */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.countdown-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px 15px;
+    border-radius: 4px;
+    min-width: 90px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 300;
+    font-family: var(--font-heading);
+}
+
+.countdown-item p {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+/* Section Containers */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.details-section, .gifts-section, .rsvp-section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* Card Styling */
+.details-card, .gifts-card, .rsvp-card {
+    background: var(--card-bg);
+    padding: 80px 40px;
+    border-radius: 2px; /* Sharp, modern edges */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    border: var(--border-gold);
+    position: relative;
+}
+
+/* Decorative Ornaments */
+.details-card::before, .details-card::after {
+    content: "◈";
+    color: var(--primary-color);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    font-size: 1.5rem;
+}
+.details-card::before { top: 20px; }
+.details-card::after { bottom: 20px; }
+
+h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Details Grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.detail-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.detail-item p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Carousel Styles */
+.carousel-section {
+    padding-bottom: 100px;
+}
+
+.carousel-wrapper {
+    position: relative;
+    max-width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 2px;
+    border: var(--border-gold);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dress Code */
+.dress-code {
+    margin-top: 80px;
+    border-top: var(--border-gold);
+    padding-top: 60px;
+}
+
+.color-palette {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.color-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.color-circle:hover {
+    transform: scale(1.1);
+}
+
+/* Gifts Section */
+.gift-option {
+    padding: 30px;
+    border: 1px solid #f0f0f0;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.gift-option:hover {
+    border-color: var(--primary-color);
+    background: #fff;
+}
+
+/* Buttons */
+.btn-maps, .btn-rsvp {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    margin-top: 20px;
+    border: 1px solid var(--secondary-color);
+}
+
+.btn-maps:hover {
+    background: transparent;
+    color: var(--secondary-color);
+}
+
+.btn-rsvp {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-rsvp:hover {
+    background: white;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* RSVP Specific */
+.rsvp-card {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+}
+
+.rsvp-card h2 {
+    color: white;
+}
+
+/* Footer */
+.footer {
+    padding: 60px 20px;
+    background: #111;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .details-card, .gifts-card, .rsvp-card {
+        padding: 60px 20px;
+    }
+    .color-palette {
+        gap: 20px;
+    }
+}
